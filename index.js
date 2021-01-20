@@ -2,6 +2,7 @@
 let usrInput = 16; //default grid side size
 let container = document.getElementById('grid-container');
 document.getElementById('cell-btn').addEventListener('click', btnClick);
+document.getElementById('clear-btn').addEventListener('click', removeClass);
 
 
 //initial functions when page is loaded
@@ -47,6 +48,12 @@ function changeClass(){
     //adds 'gridDivFull class
     this.classList.add('gridDivFull');
 };
+
+function removeClass(){
+    //removes black squares
+    gridDivs = gridArray();
+    gridDivs.forEach(cell => cell.classList.remove('gridDivFull') )
+}
 
 function btnClick(){
     //when the button is clicked it fires off functions to clear the cells, create new cells based on user input
